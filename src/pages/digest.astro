@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Sample Digest - Job Digest">
+  <section class="py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold mb-8">Sample Digest</h1>
+      <p class="text-slate-600 mb-12">This is what your weekly email looks like:</p>
+
+      <div class="space-y-4">
+        <div class="bg-white border-l-4 border-green-500 p-6 rounded-lg shadow-sm">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-xl font-bold">Senior Backend Engineer</h3>
+              <p class="text-slate-600">TechCorp GmbH • Berlin</p>
+            </div>
+            <div class="bg-green-100 text-green-800 px-3 py-1 rounded-full font-bold">9.2/10</div>
+          </div>
+          <p class="text-slate-700">Strong Python background, cloud experience. €80k-€100k</p>
+        </div>
+
+        <div class="bg-white border-l-4 border-green-500 p-6 rounded-lg shadow-sm">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-xl font-bold">Full-Stack Developer</h3>
+              <p class="text-slate-600">StartupXYZ • Amsterdam</p>
+            </div>
+            <div class="bg-green-100 text-green-800 px-3 py-1 rounded-full font-bold">8.7/10</div>
+          </div>
+          <p class="text-slate-700">React + Node.js. Remote-friendly. €65k-€85k</p>
+        </div>
+
+        <div class="bg-white border-l-4 border-yellow-500 p-6 rounded-lg shadow-sm">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-xl font-bold">DevOps Engineer</h3>
+              <p class="text-slate-600">Enterprise Co • Paris</p>
+            </div>
+            <div class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full font-bold">7.8/10</div>
+          </div>
+          <p class="text-slate-700">Kubernetes, AWS/GCP. Leadership role. €70k-€90k</p>
+        </div>
+      </div>
+
+      <div class="mt-12 p-6 bg-blue-50 rounded-lg">
+        <h3 class="font-bold mb-2">💡 How scoring works</h3>
+        <p class="text-slate-700">Each job is scored 1-10 based on: skill match, career growth, salary fit, location, and company stability.</p>
+      </div>
+    </div>
+  </section>
+</Layout>

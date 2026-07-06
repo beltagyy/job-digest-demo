@@ -1,0 +1,36 @@
+---
+interface Props {
+  title?: string;
+}
+const { title = "Job Digest" } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="AI-powered job search assistant" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-slate-50">
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <a href="/job-digest-demo/" class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          Job Digest
+        </a>
+        <div class="flex gap-6 items-center">
+          <a href="/job-digest-demo/" class="text-slate-600 hover:text-slate-900">Home</a>
+          <a href="/job-digest-demo/digest" class="text-slate-600 hover:text-slate-900">Demo</a>
+          <a href="/job-digest-demo/how-it-works" class="text-slate-600 hover:text-slate-900">How It Works</a>
+          <a href="#waitlist" class="bg-blue-600 text-white px-4 py-2 rounded-lg">Early Access</a>
+        </div>
+      </div>
+    </nav>
+    <main><slot /></main>
+    <footer class="bg-slate-900 text-white mt-20 py-12">
+      <div class="max-w-7xl mx-auto px-4 text-center text-slate-400">
+        <p>&copy; 2026 Job Digest. MIT License. Built by <a href="https://github.com/beltagyy" class="hover:text-white">beltagyy</a></p>
+      </div>
+    </footer>
+  </body>
+</html>

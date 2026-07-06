@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import WaitlistForm from '../components/WaitlistForm.astro';
+---
+
+<Layout title="Job Digest - AI-Powered Job Search">
+  <section class="bg-gradient-to-br from-blue-50 to-purple-50 py-20 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6">
+        Stop wasting time on job search
+      </h1>
+      <p class="text-xl text-slate-600 mb-8">
+        Job Digest uses AI to scrape LinkedIn & Indeed, score jobs against your CV,
+        and send you personalized matches with ready-to-use cover letters—every week.
+      </p>
+      <div class="flex gap-4 justify-center flex-wrap">
+        <a href="#waitlist" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold">
+          Get Early Access
+        </a>
+        <a href="https://github.com/beltagyy/job-digest" class="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold">
+          View on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-16">Features</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-sm border">
+          <span class="text-3xl">🔍</span>
+          <h3 class="text-xl font-bold mb-3">Smart Scraping</h3>
+          <p class="text-slate-600">Auto scrapes LinkedIn & Indeed across EU countries</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-sm border">
+          <span class="text-3xl">🤖</span>
+          <h3 class="text-xl font-bold mb-3">AI Scoring</h3>
+          <p class="text-slate-600">DeepSeek LLM scores jobs against your CV</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-sm border">
+          <span class="text-3xl">✍️</span>
+          <h3 class="text-xl font-bold mb-3">Cover Letters</h3>
+          <p class="text-slate-600">Personalized for each job, ready to send</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="waitlist" class="py-20 px-4 bg-slate-100">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-4">Get Early Access</h2>
+      <p class="text-center text-slate-600 mb-12">
+        Job Digest is coming soon. Sign up now to be first in line.
+      </p>
+      <WaitlistForm />
+    </div>
+  </section>
+</Layout>

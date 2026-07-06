@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="How It Works - Job Digest">
+  <section class="py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold mb-12">How Job Digest Works</h1>
+
+      <div class="space-y-12">
+        <div class="flex gap-6">
+          <div class="flex items-start">
+            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-blue-600 text-white font-bold text-lg flex-shrink-0">1</div>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold mb-2">Configure Your Profile</h2>
+            <p class="text-slate-700">Provide your CV, job preferences, target locations, salary expectations, and career goals.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-6">
+          <div class="flex items-start">
+            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-purple-600 text-white font-bold text-lg flex-shrink-0">2</div>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold mb-2">Smart Scraping</h2>
+            <p class="text-slate-700">Weekly, scrapes LinkedIn & Indeed across EU countries using JobSpy library.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-6">
+          <div class="flex items-start">
+            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-blue-600 text-white font-bold text-lg flex-shrink-0">3</div>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold mb-2">AI Scoring & Ranking</h2>
+            <p class="text-slate-700">DeepSeek LLM scores each job 1-10 based on skill match, growth potential, and fit.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-6">
+          <div class="flex items-start">
+            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-purple-600 text-white font-bold text-lg flex-shrink-0">4</div>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold mb-2">Generate Cover Letters</h2>
+            <p class="text-slate-700">AI generates personalized cover letters for each matched job, ready to send.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-6">
+          <div class="flex items-start">
+            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-blue-600 text-white font-bold text-lg flex-shrink-0">5</div>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold mb-2">Email Digest</h2>
+            <p class="text-slate-700">Every Friday morning, get a beautiful HTML email with your top job matches.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-20 pt-20 border-t-2">
+        <h2 class="text-3xl font-bold mb-8">Tech Stack</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-slate-50 p-6 rounded-lg">
+            <h3 class="font-bold text-lg mb-4">Backend</h3>
+            <ul class="space-y-2 text-slate-700">
+              <li>🐍 Python 3.12</li>
+              <li>🔍 JobSpy (scraping)</li>
+              <li>🤖 DeepSeek (AI)</li>
+              <li>✉️ Resend (email)</li>
+              <li>📅 APScheduler</li>
+            </ul>
+          </div>
+          <div class="bg-slate-50 p-6 rounded-lg">
+            <h3 class="font-bold text-lg mb-4">Deployment</h3>
+            <ul class="space-y-2 text-slate-700">
+              <li>🏠 Self-hosted</li>
+              <li>☁️ AWS/GCP ready</li>
+              <li>🐳 Docker</li>
+              <li>🔐 Environment config</li>
+              <li>📝 Full customization</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
