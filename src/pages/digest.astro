@@ -3,31 +3,192 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Sample Digest - Job Digest">
-  <section class="py-20 px-4">
+  <section class="py-20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
-      <h1 class="text-4xl font-bold mb-8">Sample Digest</h1>
-      <p class="text-slate-600 mb-12">This is what your weekly email looks like:</p>
+      <div class="mb-16">
+        <h1 class="font-display font-bold text-5xl mb-4 bg-gradient-to-r from-brand-accent to-brand-cyan bg-clip-text text-transparent">
+          Your Weekly Digest
+        </h1>
+        <p class="text-brand-muted text-lg">
+          This is exactly what lands in your inbox every Friday morning. Real jobs, AI-scored, with personalized cover letters.
+        </p>
+      </div>
 
+      <!-- Sample Digest Cards -->
       <div class="space-y-4">
-        <div class="bg-white border-l-4 border-green-500 p-6 rounded-lg shadow-sm">
-          <div class="flex justify-between items-start mb-4">
-            <div>
-              <h3 class="text-xl font-bold">Senior Backend Engineer</h3>
-              <p class="text-slate-600">TechCorp GmbH • Berlin</p>
+        <!-- Job 1 - Excellent Match -->
+        <div class="group bg-white/5 backdrop-blur-sm border border-brand-accent/50 rounded-2xl p-8 hover:border-brand-accent/80 hover:bg-white/10 transition-all duration-300 hover:shadow-xl hover:shadow-brand-accent/20">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-6">
+            <div class="flex-1">
+              <div class="flex items-start gap-4 mb-4">
+                <div>
+                  <h3 class="font-display font-bold text-2xl mb-1">Senior Backend Engineer</h3>
+                  <p class="text-brand-muted">TechCorp GmbH</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 pb-6 border-b border-white/10">
+                <div>
+                  <p class="text-xs text-brand-muted mb-1">Location</p>
+                  <p class="font-semibold">Berlin, Germany</p>
+                </div>
+                <div>
+                  <p class="text-xs text-brand-muted mb-1">Salary</p>
+                  <p class="font-semibold">€80k - €100k</p>
+                </div>
+                <div>
+                  <p class="text-xs text-brand-muted mb-1">Experience</p>
+                  <p class="font-semibold">5-7 years</p>
+                </div>
+                <div>
+                  <p class="text-xs text-brand-muted mb-1">Type</p>
+                  <p class="font-semibold">Full-time</p>
+                </div>
+              </div>
+
+              <p class="text-brand-muted mb-4">
+                Your strong Python background, cloud architecture experience, and impressive GitHub projects show excellent system design skills. They're hiring urgently.
+              </p>
+
+              <div class="flex gap-3 flex-wrap">
+                <a href="#" class="px-4 py-2 bg-brand-accent/20 border border-brand-accent/50 rounded-lg text-brand-accent hover:bg-brand-accent/30 transition">
+                  View Full Job
+                </a>
+                <a href="#" class="px-4 py-2 bg-brand-cyan/20 border border-brand-cyan/50 rounded-lg text-brand-cyan hover:bg-brand-cyan/30 transition">
+                  See Cover Letter
+                </a>
+              </div>
             </div>
-            <div class="bg-green-100 text-green-800 px-3 py-1 rounded-full font-bold">9.2/10</div>
+
+            <!-- Score Badge -->
+            <div class="flex-shrink-0">
+              <div class="text-center">
+                <div class="w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-br from-brand-accent/30 to-brand-cyan/30 border-2 border-green-500/50">
+                  <span class="font-display font-bold text-3xl bg-gradient-to-r from-green-400 to-green-300 bg-clip-text text-transparent">
+                    9.2
+                  </span>
+                </div>
+                <p class="text-sm text-green-400 font-semibold mt-2">Excellent Match</p>
+              </div>
+            </div>
           </div>
-          <p class="text-slate-700">Strong Python background, cloud experience. €80k-€100k</p>
         </div>
 
-        <div class="bg-white border-l-4 border-green-500 p-6 rounded-lg shadow-sm">
-          <div class="flex justify-between items-start mb-4">
-            <div>
-              <h3 class="text-xl font-bold">Full-Stack Developer</h3>
-              <p class="text-slate-600">StartupXYZ • Amsterdam</p>
+        <!-- Job 2 - Strong Match -->
+        <div class="group bg-white/5 backdrop-blur-sm border border-brand-cyan/50 rounded-2xl p-8 hover:border-brand-cyan/80 hover:bg-white/10 transition-all duration-300 hover:shadow-xl hover:shadow-brand-cyan/20">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-6">
+            <div class="flex-1">
+              <div class="flex items-start gap-4 mb-4">
+                <div>
+                  <h3 class="font-display font-bold text-2xl mb-1">Full-Stack Developer</h3>
+                  <p class="text-brand-muted">StartupXYZ</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 pb-6 border-b border-white/10">
+                <div>
+                  <p class="text-xs text-brand-muted mb-1">Location</p>
+                  <p class="font-semibold">Amsterdam, Netherlands</p>
+                </div>
+                <div>
+                  <p class="text-xs text-brand-muted mb-1">Salary</p>
+                  <p class="font-semibold">€65k - €85k</p>
+                </div>
+                <div>
+                  <p class="text-xs text-brand-muted mb-1">Experience</p>
+                  <p class="font-semibold">3-5 years</p>
+                </div>
+                <div>
+                  <p class="text-xs text-brand-muted mb-1">Type</p>
+                  <p class="font-semibold">Remote-friendly</p>
+                </div>
+              </div>
+
+              <p class="text-brand-muted mb-4">
+                React and Node.js expertise matches perfectly. Growing early-stage company with strong technical culture and great work-life balance.
+              </p>
+
+              <div class="flex gap-3 flex-wrap">
+                <a href="#" class="px-4 py-2 bg-brand-accent/20 border border-brand-accent/50 rounded-lg text-brand-accent hover:bg-brand-accent/30 transition">
+                  View Full Job
+                </a>
+                <a href="#" class="px-4 py-2 bg-brand-cyan/20 border border-brand-cyan/50 rounded-lg text-brand-cyan hover:bg-brand-cyan/30 transition">
+                  See Cover Letter
+                </a>
+              </div>
             </div>
-            <div class="bg-green-100 text-green-800 px-3 py-1 rounded-full font-bold">8.7/10</div>
+
+            <!-- Score Badge -->
+            <div class="flex-shrink-0">
+              <div class="text-center">
+                <div class="w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-br from-brand-accent/30 to-brand-cyan/30 border-2 border-green-500/50">
+                  <span class="font-display font-bold text-3xl bg-gradient-to-r from-green-400 to-green-300 bg-clip-text text-transparent">
+                    8.7
+                  </span>
+                </div>
+                <p class="text-sm text-green-400 font-semibold mt-2">Strong Match</p>
+              </div>
+            </div>
           </div>
+        </div>
+
+        <!-- Job 3 - Good Match -->
+        <div class="group bg-white/5 backdrop-blur-sm border border-yellow-500/50 rounded-2xl p-8 hover:border-yellow-500/80 hover:bg-white/10 transition-all duration-300 hover:shadow-xl hover:shadow-yellow-500/20">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-6">
+            <div class="flex-1">
+              <div class="flex items-start gap-4 mb-4">
+                <div>
+                  <h3 class="font-display font-bold text-2xl mb-1">DevOps Engineer</h3>
+                  <p class="text-brand-muted">Enterprise Co</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 pb-6 border-b border-white/10">
+                <div>
+                  <p class="text-xs text-brand-muted mb-1">Location</p>
+                  <p class="font-semibold">Paris, France</p>
+                </div>
+                <div>
+                  <p class="text-xs text-brand-muted mb-1">Salary</p>
+                  <p class="font-semibold">€70k - €90k</p>
+                </div>
+                <div>
+                  <p class="text-xs text-brand-muted mb-1">Experience</p>
+                  <p class="font-semibold">5+ years</p>
+                </div>
+                <div>
+                  <p class="text-xs text-brand-muted mb-1">Type</p>
+                  <p class="font-semibold">Full-time</p>
+                </div>
+              </div>
+
+              <p class="text-brand-muted mb-4">
+                Kubernetes and AWS/GCP expertise valued. Leadership opportunity to mentor junior engineers in a stable enterprise environment.
+              </p>
+
+              <div class="flex gap-3 flex-wrap">
+                <a href="#" class="px-4 py-2 bg-brand-accent/20 border border-brand-accent/50 rounded-lg text-brand-accent hover:bg-brand-accent/30 transition">
+                  View Full Job
+                </a>
+                <a href="#" class="px-4 py-2 bg-brand-cyan/20 border border-brand-cyan/50 rounded-lg text-brand-cyan hover:bg-brand-cyan/30 transition">
+                  See Cover Letter
+                </a>
+              </div>
+            </div>
+
+            <!-- Score Badge -->
+            <div class="flex-shrink-0">
+              <div class="text-center">
+                <div class="w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-br from-brand-accent/20 to-yellow-500/20 border-2 border-yellow-500/50">
+                  <span class="font-display font-bold text-3xl bg-gradient-to-r from-yellow-400 to-yellow-300 bg-clip-text text-transparent">
+                    7.8
+                  </span>
+                </div>
+                <p class="text-sm text-yellow-400 font-semibold mt-2">Good Match</p>
+              </div>
+            </div>
+          </div>
+        </div>
           <p class="text-slate-700">React + Node.js. Remote-friendly. €65k-€85k</p>
         </div>
 
@@ -46,6 +207,15 @@ import Layout from '../layouts/Layout.astro';
       <div class="mt-12 p-6 bg-blue-50 rounded-lg">
         <h3 class="font-bold mb-2">💡 How scoring works</h3>
         <p class="text-slate-700">Each job is scored 1-10 based on: skill match, career growth, salary fit, location, and company stability.</p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+      <!-- More indicator -->
+      <div class="mt-12 p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl text-center">
+        <p class="text-brand-muted mb-2">This digest contains 8 total matches</p>
+        <p class="text-sm text-brand-muted">The 3 shown above are your highest scores. All include personalized cover letters ready to send.</p>
       </div>
     </div>
   </section>
