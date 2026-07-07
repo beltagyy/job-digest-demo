@@ -4,50 +4,259 @@ import WaitlistForm from '../components/WaitlistForm.astro';
 ---
 
 <Layout title="Job Digest - AI-Powered Job Search">
-  <section class="bg-gradient-to-br from-blue-50 to-purple-50 py-20 px-4">
-    <div class="max-w-4xl mx-auto text-center">
-      <h1 class="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6">
-        Stop wasting time on job search
+  <style>
+    .animated-orbs {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.3;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .orb-1 {
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(135deg, #A78BFA, #0ea5e9);
+      top: -100px;
+      left: -100px;
+      animation-delay: 0s;
+    }
+
+    .orb-2 {
+      width: 250px;
+      height: 250px;
+      background: linear-gradient(135deg, #0ea5e9, #A78BFA);
+      top: 20%;
+      right: -80px;
+      animation-delay: 2s;
+    }
+
+    .orb-3 {
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(135deg, #A78BFA, #0ea5e9);
+      bottom: -50px;
+      left: 10%;
+      animation-delay: 4s;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px) translateX(0px);
+      }
+      25% {
+        transform: translateY(-30px) translateX(20px);
+      }
+      50% {
+        transform: translateY(-60px) translateX(-20px);
+      }
+      75% {
+        transform: translateY(-30px) translateX(30px);
+      }
+    }
+  </style>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 py-20">
+    <!-- Animated background orbs -->
+    <div class="animated-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Grid background -->
+    <div class="absolute inset-0 bg-[linear-gradient(rgba(167,139,250,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(167,139,250,0.03)_1px,transparent_1px)] bg-[size:50px_50px] opacity-40"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-5xl mx-auto text-center">
+      <div class="mb-8 inline-block">
+        <span class="text-sm font-mono text-brand-cyan bg-brand-cyan/10 border border-brand-cyan/30 rounded-full px-4 py-2">
+          ✨ AI-Powered Job Search
+        </span>
+      </div>
+
+      <h1 class="font-display font-bold text-5xl sm:text-6xl lg:text-7xl mb-6 leading-tight">
+        <span class="bg-gradient-to-r from-brand-accent via-white to-brand-cyan bg-clip-text text-transparent">
+          Your AI job assistant
+        </span>
+        <br />
+        <span class="text-white">that actually works</span>
       </h1>
-      <p class="text-xl text-slate-600 mb-8">
-        Job Digest uses AI to scrape LinkedIn & Indeed, score jobs against your CV,
-        and send you personalized matches with ready-to-use cover letters—every week.
+
+      <p class="text-lg sm:text-xl text-brand-muted mb-12 max-w-2xl mx-auto leading-relaxed">
+        Stop endless scrolling. Job Digest scrapes LinkedIn & Indeed, scores roles against your CV with AI, and sends you curated matches with personalized cover letters—every week.
       </p>
-      <div class="flex gap-4 justify-center flex-wrap">
-        <a href="#waitlist" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold">
-          Get Early Access
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+        <a
+          href="#waitlist"
+          class="px-8 py-4 bg-gradient-to-r from-brand-accent to-brand-cyan text-brand-dark font-display font-bold rounded-lg hover:shadow-2xl hover:shadow-brand-accent/50 transition transform hover:scale-105 active:scale-95"
+        >
+          Get Early Access →
         </a>
-        <a href="https://github.com/beltagyy/job-digest" class="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold">
+        <a
+          href="https://github.com/beltagyy/job-digest"
+          class="px-8 py-4 border border-white/30 text-white font-display font-bold rounded-lg hover:bg-white/10 hover:border-white/50 transition"
+        >
           View on GitHub
         </a>
       </div>
-    </div>
-  </section>
 
-  <section class="py-20 px-4">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-4xl font-bold text-center mb-16">Features</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-8 rounded-xl shadow-sm border">
-          <span class="text-3xl">🔍</span>
-          <h3 class="text-xl font-bold mb-3">Smart Scraping</h3>
-          <p class="text-slate-600">Auto scrapes LinkedIn & Indeed across EU countries</p>
+      <!-- Social proof -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-brand-muted pt-8 border-t border-white/10">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">🎯</span>
+          <span>100k+ jobs scraped weekly</span>
         </div>
-        <div class="bg-white p-8 rounded-xl shadow-sm border">
-          <span class="text-3xl">🤖</span>
-          <h3 class="text-xl font-bold mb-3">AI Scoring</h3>
-          <p class="text-slate-600">DeepSeek LLM scores jobs against your CV</p>
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">🌍</span>
+          <span>50+ EU countries</span>
         </div>
-        <div class="bg-white p-8 rounded-xl shadow-sm border">
-          <span class="text-3xl">✍️</span>
-          <h3 class="text-xl font-bold mb-3">Cover Letters</h3>
-          <p class="text-slate-600">Personalized for each job, ready to send</p>
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">⚡</span>
+          <span>Under $2 per week</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="waitlist" class="py-20 px-4 bg-slate-100">
+  <!-- Features Section -->
+  <section class="relative py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="font-display font-bold text-4xl sm:text-5xl mb-4">
+          <span class="bg-gradient-to-r from-brand-accent to-brand-cyan bg-clip-text text-transparent">How it works</span>
+        </h2>
+        <p class="text-brand-muted text-lg max-w-2xl mx-auto">
+          Five steps to smarter job hunting
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-12">
+        <!-- Feature 1 -->
+        <div class="group relative">
+          <div class="absolute inset-0 bg-gradient-to-br from-brand-accent/10 to-brand-cyan/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-white/30 transition-all duration-300">
+            <div class="text-5xl mb-4">🔍</div>
+            <h3 class="font-display font-bold text-xl mb-2">Smart Scraping</h3>
+            <p class="text-brand-muted">Automatically scrapes LinkedIn & Indeed across 50+ EU countries for your field.</p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="group relative">
+          <div class="absolute inset-0 bg-gradient-to-br from-brand-accent/10 to-brand-cyan/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-white/30 transition-all duration-300">
+            <div class="text-5xl mb-4">🤖</div>
+            <h3 class="font-display font-bold text-xl mb-2">AI Scoring</h3>
+            <p class="text-brand-muted">DeepSeek scores each job 1-10 based on your CV, skills, and career goals.</p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="group relative">
+          <div class="absolute inset-0 bg-gradient-to-br from-brand-accent/10 to-brand-cyan/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-white/30 transition-all duration-300">
+            <div class="text-5xl mb-4">✍️</div>
+            <h3 class="font-display font-bold text-xl mb-2">Generated Letters</h3>
+            <p class="text-brand-muted">Personalized cover letters for each job, ready to send or customize.</p>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="group relative">
+          <div class="absolute inset-0 bg-gradient-to-br from-brand-accent/10 to-brand-cyan/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-white/30 transition-all duration-300">
+            <div class="text-5xl mb-4">📧</div>
+            <h3 class="font-display font-bold text-xl mb-2">Weekly Digest</h3>
+            <p class="text-brand-muted">Beautiful HTML email every Friday with your top matched jobs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Demo Preview -->
+  <section class="relative py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-display font-bold text-4xl sm:text-5xl mb-4">
+          <span class="bg-gradient-to-r from-brand-accent to-brand-cyan bg-clip-text text-transparent">See it in action</span>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Sample Job 1 -->
+        <div class="group bg-white/5 backdrop-blur-sm border border-brand-accent/30 rounded-xl overflow-hidden hover:border-brand-accent/60 transition-all duration-300 hover:shadow-lg hover:shadow-brand-accent/20">
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-4">
+              <div>
+                <h4 class="font-semibold text-lg">Senior Backend Engineer</h4>
+                <p class="text-brand-muted text-sm">TechCorp • Berlin</p>
+              </div>
+              <div class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm font-mono font-bold">9.2</div>
+            </div>
+            <p class="text-brand-muted text-sm mb-4">Python, cloud architecture, €80k-100k</p>
+            <div class="flex gap-2">
+              <a href="/job-digest-demo/digest" class="text-brand-accent hover:text-brand-cyan text-sm font-semibold transition">View →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample Job 2 -->
+        <div class="group bg-white/5 backdrop-blur-sm border border-brand-cyan/30 rounded-xl overflow-hidden hover:border-brand-cyan/60 transition-all duration-300 hover:shadow-lg hover:shadow-brand-cyan/20">
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-4">
+              <div>
+                <h4 class="font-semibold text-lg">Full-Stack Developer</h4>
+                <p class="text-brand-muted text-sm">StartupXYZ • Amsterdam</p>
+              </div>
+              <div class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm font-mono font-bold">8.7</div>
+            </div>
+            <p class="text-brand-muted text-sm mb-4">React, Node.js, remote, €65k-85k</p>
+            <div class="flex gap-2">
+              <a href="/job-digest-demo/digest" class="text-brand-accent hover:text-brand-cyan text-sm font-semibold transition">View →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample Job 3 -->
+        <div class="group bg-white/5 backdrop-blur-sm border border-white/20 rounded-xl overflow-hidden hover:border-white/50 transition-all duration-300 hover:shadow-lg hover:shadow-white/10">
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-4">
+              <div>
+                <h4 class="font-semibold text-lg">DevOps Engineer</h4>
+                <p class="text-brand-muted text-sm">Enterprise Co • Paris</p>
+              </div>
+              <div class="px-3 py-1 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-mono font-bold">7.8</div>
+            </div>
+            <p class="text-brand-muted text-sm mb-4">Kubernetes, AWS/GCP, €70k-90k</p>
+            <div class="flex gap-2">
+              <a href="/job-digest-demo/digest" class="text-brand-accent hover:text-brand-cyan text-sm font-semibold transition">View →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="/job-digest-demo/digest" class="inline-block text-brand-accent hover:text-brand-cyan font-semibold transition">
+          View full sample digest →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Waitlist CTA -->
+  <section id="waitlist" class="relative py-20 px-4 sm:px-6 lg:px-8 scroll-mt-20">
     <div class="max-w-2xl mx-auto">
       <h2 class="text-4xl font-bold text-center mb-4">Get Early Access</h2>
       <p class="text-center text-slate-600 mb-12">

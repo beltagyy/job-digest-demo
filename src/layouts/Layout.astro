@@ -4,32 +4,116 @@ interface Props {
 }
 const { title = "Job Digest" } = Astro.props;
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="AI-powered job search assistant" />
+    <meta name="description" content="AI-powered job search assistant for EU professionals" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
     <title>{title}</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scrollbar-gutter: stable;
+      }
+      body {
+        font-family: 'Inter', system-ui, sans-serif;
+        background: #0F172A;
+        color: #f8fafc;
+        overflow-x: hidden;
+      }
+      .font-display {
+        font-family: 'Space Grotesk', system-ui, sans-serif;
+      }
+      .font-mono {
+        font-family: 'JetBrains Mono', monospace;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
   </head>
-  <body class="bg-slate-50">
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-      <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="/job-digest-demo/" class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+  <body class="bg-brand-dark text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 border-b border-white/10 backdrop-blur-sm bg-brand-dark/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        <a href="/job-digest-demo/" class="font-display text-2xl font-bold bg-gradient-to-r from-brand-accent to-brand-cyan bg-clip-text text-transparent hover:opacity-80 transition">
           Job Digest
         </a>
-        <div class="flex gap-6 items-center">
-          <a href="/job-digest-demo/" class="text-slate-600 hover:text-slate-900">Home</a>
-          <a href="/job-digest-demo/digest" class="text-slate-600 hover:text-slate-900">Demo</a>
-          <a href="/job-digest-demo/how-it-works" class="text-slate-600 hover:text-slate-900">How It Works</a>
-          <a href="#waitlist" class="bg-blue-600 text-white px-4 py-2 rounded-lg">Early Access</a>
+        <div class="hidden md:flex gap-8 items-center">
+          <a href="/job-digest-demo/" class="text-brand-muted hover:text-white transition">Home</a>
+          <a href="/job-digest-demo/digest" class="text-brand-muted hover:text-white transition">Demo</a>
+          <a href="/job-digest-demo/how-it-works" class="text-brand-muted hover:text-white transition">How It Works</a>
+          <a href="#waitlist" class="bg-gradient-to-r from-brand-accent to-brand-cyan text-brand-dark px-5 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-brand-accent/50 transition">
+            Early Access
+          </a>
+        </div>
+        <div class="md:hidden">
+          <a href="#waitlist" class="bg-gradient-to-r from-brand-accent to-brand-cyan text-brand-dark px-4 py-2 rounded-lg font-semibold text-sm">
+            Access
+          </a>
         </div>
       </div>
     </nav>
-    <main><slot /></main>
-    <footer class="bg-slate-900 text-white mt-20 py-12">
-      <div class="max-w-7xl mx-auto px-4 text-center text-slate-400">
-        <p>&copy; 2026 Job Digest. MIT License. Built by <a href="https://github.com/beltagyy" class="hover:text-white">beltagyy</a></p>
+
+    <!-- Content -->
+    <main class="pt-20">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 bg-brand-dark/50 backdrop-blur-sm py-16 mt-32">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          <div>
+            <h3 class="font-display font-bold text-lg mb-4 bg-gradient-to-r from-brand-accent to-brand-cyan bg-clip-text text-transparent">Job Digest</h3>
+            <p class="text-brand-muted text-sm leading-relaxed">
+              AI-powered job search for EU professionals. Find your next role, faster.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Product</h4>
+            <ul class="space-y-2 text-brand-muted text-sm">
+              <li><a href="https://github.com/beltagyy/job-digest" class="hover:text-white transition">GitHub</a></li>
+              <li><a href="#waitlist" class="hover:text-white transition">Waitlist</a></li>
+              <li><a href="/job-digest-demo/how-it-works" class="hover:text-white transition">Documentation</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Built with</h4>
+            <ul class="space-y-2 text-brand-muted text-sm">
+              <li>Python</li>
+              <li>DeepSeek AI</li>
+              <li>JobSpy</li>
+              <li>Astro + Tailwind</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Status</h4>
+            <p class="text-brand-muted text-sm mb-2">Currently in beta</p>
+            <div class="flex gap-2">
+              <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span class="text-xs text-brand-muted">All systems operational</span>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-brand-muted text-sm">
+          <p>&copy; 2026 Job Digest. MIT License.</p>
+          <p>Built by <a href="https://github.com/beltagyy" class="text-white hover:text-brand-accent transition">Mohamed ElBeltagy</a></p>
+        </div>
       </div>
     </footer>
   </body>
