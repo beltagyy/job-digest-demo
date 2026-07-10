@@ -1,4 +1,3 @@
-// v3
 export const STATS = [
   { value: '50K+', label: 'Jobs Posted Daily' },
   { value: '98%', label: 'Accuracy Rate' },
